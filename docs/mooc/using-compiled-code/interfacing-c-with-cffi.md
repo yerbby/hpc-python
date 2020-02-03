@@ -47,8 +47,8 @@ from cffi import FFI
 ffibuilder = FFI()
 
 ffibuilder.cdef("""
-    double sqrt(double x);   # list all the function prototypes from the
-    double sin(double x);    # library that we want to use
+    double sqrt(double x);  // list all the function prototypes from the
+    double sin(double x);   // library that we want to use
                 """)
 
 # set_source() gives the name of the python extension module to
@@ -170,7 +170,7 @@ c = np.zeros_like(a)
 # Pointer objects need to be passed to library
 aptr = ffi.cast("double *", ffi.from_buffer(a))
 bptr = ffi.cast("double *", ffi.from_buffer(b))
-bptr = ffi.cast("double *", ffi.from_buffer(b))
+cptr = ffi.cast("double *", ffi.from_buffer(c))
 
 lib.add(aptr, bptr, cptr, len(a))
 ~~~
